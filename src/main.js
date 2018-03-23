@@ -6,7 +6,13 @@ import { Api } from './api.js';
 
 $(document).ready(function() {
 
+  let apiCall = new Api();
+  apiCall.callBetterDoctorApi("sore throat")
+  .then(function(response){
+    console.log(apiCall.extractBD(response));
   })
+
+});
 
   // apiCall.callTasteDiveApi('casa blanca')
   // .then((response)=>{
@@ -20,4 +26,3 @@ $(document).ready(function() {
   //   })
   //
   // });
-});
