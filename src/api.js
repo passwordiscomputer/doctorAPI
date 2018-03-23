@@ -3,6 +3,13 @@ import $ from 'jquery';
 
 
 export class Api {
+  //function to call, extract, then display using display callback
+  findDoctor(inputSymptom, displayFunction){
+    this.callBetterDoctorApi(inputSymptom)
+    .then((response)=>{
+      displayFunction(this.extractBD(response));
+    })
+  }
 //api calls
 //better doctor api call
 //takes in a symtom
