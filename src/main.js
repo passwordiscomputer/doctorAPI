@@ -15,9 +15,13 @@ function display(doctorData){
 }
 
 $(document).ready(function() {
-
   let apiCall = new Api();
-  apiCall.findDoctor("sore throat", display)
+
+  $("button").click(function(){
+    $(".container .row").empty();
+    let movie = $("#symptomInput").val();
+    apiCall.findDoctor(movie, display);
+  })
 
 });
 

@@ -1,7 +1,5 @@
 import $ from 'jquery';
 
-
-
 export class Api {
   //function to call, extract, then display using display callback
   findDoctor(inputSymptom, displayFunction){
