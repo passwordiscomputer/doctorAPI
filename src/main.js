@@ -8,6 +8,7 @@ function display(doctorData){
   doctorData.forEach(function(doctor){
     $('.container .row').append(`<div class="col-sm-3">
                             <div class="card">
+                              <img src="${doctor[2]}">
                               <h4>${doctor[0]} ${doctor[1]}</h4>
                             </div>
                           </div>`)

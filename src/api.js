@@ -34,7 +34,7 @@ export class Api {
     let array = []
     let body = JSON.parse(json);
     body.data.forEach(function(doctor){
-      array.push([doctor.profile.first_name, doctor.profile.last_name]);
+      array.push([doctor.profile.first_name, doctor.profile.last_name, doctor.profile.image_url]);
     });
     return array;
   }
