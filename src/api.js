@@ -2,11 +2,16 @@ import $ from 'jquery';
 
 export class Api {
   //function to call, extract, then display using display callback
-  findDoctor(inputSymptom, displayFunction){
+  findDoctor(address, inputSymptom, displayFunction){
     // let betterDoctorUrl = betterDoctorUrl(lat, long, inputSymptom, process.env.exports.apiKey)
-    this.callApi(this.geocodeUrl("97219"))
+    this.callApi(this.geocodeUrl(address))
     .then((response)=>{
-      console.log(this.extractGeocode(response));
+      let location = this.extractGeocode(response);
+      let betterDoctorUrl = this.betterDoctorUrl(location[0], location[1], inputSymptom);
+      return this.callApi(betterDoctorUrl)
+    })
+    .then((response)=>{
+      displayFunction(this.extractBD(response));
     })
   }
 //api calls

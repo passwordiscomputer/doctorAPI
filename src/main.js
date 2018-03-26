@@ -20,8 +20,9 @@ $(document).ready(function() {
 
   $("button").click(function(){
     $(".container .row").empty();
-    let movie = $("#symptomInput").val();
-    apiCall.findDoctor(movie, display);
+    let symptom = $("#symptomInput").val();
+    let address = $("#addressInput").val();
+    apiCall.findDoctor(address, symptom, display);
   })
 
 });
