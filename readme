@@ -1,0 +1,27 @@
+Doctor Search
+By Chase Bowden
+Description
+A website that allows users to search for a doctor by their name or specialty
+
+Setup/Installation Requirements
+download or clone repository from git clone https://github.com/passwordiscomputer/doctorAPI
+navigate to project directory
+obtain api key from https://developer.betterdoctor.com/
+add .env file containing the line: exports.apiKey=[YOUR API KEY]
+obtain api key from https://developers.google.com/maps/documentation/geocoding/start
+add line to env file: exports.geocodeKey=[YOUR API KEY]
+run npm install -y
+run npm run start
+Support and contact details
+contact me at chase.bowden.pdx@gmail.com
+Technologies Used
+HTML
+CSS
+Bootstrap
+Javascript
+JQuery
+Npm
+License
+Copyright (c) 2018 CHASE BOWDEN
+
+Anyone Anywhere is free to use this software anytime. No need to credit me if you do not want to :)
