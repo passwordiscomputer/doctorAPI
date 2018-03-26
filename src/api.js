@@ -6,7 +6,7 @@ export class Api {
     // let betterDoctorUrl = betterDoctorUrl(lat, long, inputSymptom, process.env.exports.apiKey)
     this.callApi(this.geocodeUrl("97219"))
     .then((response)=>{
-      console.log(response);
+      console.log(this.extractGeocode(response));
     })
   }
 //api calls
@@ -43,6 +43,10 @@ export class Api {
       array.push([doctor.profile.first_name, doctor.profile.last_name, doctor.profile.image_url]);
     });
     return array;
+  }
+  extractGeocode(json){
+    let body = JSON.parse(json);
+    return [body.results[0].geometry.location.lat, body.results[0].geometry.location.lng];
   }
 
 }
