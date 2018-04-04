@@ -26,16 +26,3 @@ $(document).ready(function() {
   })
 
 });
-
-  // apiCall.callTasteDiveApi('casa blanca')
-  // .then((response)=>{
-  //   let movieArray = apiCall.extractTasteDive(response);
-  //   movieArray.forEach(function(movie){
-  //     apiCall.callMovieDBApi(movie)
-  //     .then((response)=>{
-  //       console.log(apiCall.extractMovieDB(response))
-  //       displayMovies(apiCall.extractMovieDB(response));
-  //     })
-  //   })
-  //
-  // });
