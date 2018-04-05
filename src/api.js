@@ -2,12 +2,12 @@ import $ from 'jquery';
 
 export class Api {
   //function to call, extract, then display using display callback
-  findDoctor(address, inputSymptom, displayFunction){
+  findDoctor(address, inputName, inputSymptom, displayFunction){
     // let betterDoctorUrl = betterDoctorUrl(lat, long, inputSymptom, process.env.exports.apiKey)
     this.callApi(this.geocodeUrl(address))
     .then((response)=>{
       let location = this.extractGeocode(response);
-      let betterDoctorUrl = this.betterDoctorUrl(location[0], location[1], inputSymptom);
+      let betterDoctorUrl = this.betterDoctorUrl(location[0], location[1], inputSymptom, inputName);
       return this.callApi(betterDoctorUrl)
     })
     .then((response)=>{
@@ -34,8 +34,8 @@ export class Api {
   }
 
 //api url builders
-  betterDoctorUrl(lat, long, symptom){
-    return `https://api.betterdoctor.com/2016-03-01/doctors?query=${symptom}&location=${lat}%2C${long}%2C10&user_location=${lat}%2C${long}&skip=0&limit=10&user_key=${process.env.exports.apiKey}`
+  betterDoctorUrl(lat, long, symptom, name){
+    return `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&query=${symptom}&location=${lat}%2C${long}%2C10&user_location=${lat}%2C${long}&skip=0&limit=10&user_key=${process.env.exports.apiKey}`
   }
   geocodeUrl(address){
     return `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.exports.geocodeKey}`;
